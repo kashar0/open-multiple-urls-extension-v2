@@ -1,23 +1,27 @@
 # Open Multiple URLs
 
-Sometimes you have a list of links and you just need them all open at once. This extension does exactly that. Paste your URLs, click a button, and every single one opens in its own tab immediately.
+Paste a list of URLs and open them all in new tabs at once. No more clicking links one by one.
 
-## Who uses this
+## What it does
 
-Developers running through a checklist of pages, researchers opening a batch of sources, marketers reviewing a set of links, or really anyone who has ever opened the same ten links every morning one by one and got tired of it.
+You paste URLs into the text area, one per line, and click Open All. Every URL opens in its own tab simultaneously. The extension validates each URL before opening it, automatically adds https:// if you forgot the protocol, and tells you at the end how many tabs were opened and how many invalid entries were skipped.
 
-## How to use it
+## Options
 
-Click the extension icon, paste your URLs one per line into the text area, and click Open All. Every URL opens in a new tab at the same time. No settings to configure, no confirmations to click through.
+There is a toggle to open all URLs in a new window instead of your current one, which is useful when you want to group a batch of related links together.
+
+There is also a deduplicate toggle that removes duplicate URLs from your list before opening, so if you accidentally pasted the same link twice you will not end up with two identical tabs.
+
+The URL counter updates live as you type so you always know how many tabs you are about to open before you click the button.
+
+## Version 2
+
+The original version had some reliability issues when handling large numbers of URLs, particularly around URL validation and protocol handling. Version 2 is a clean rewrite. It properly validates every URL using the browser's built-in URL parser, handles URLs without a protocol prefix automatically, gives clear feedback on exactly what was opened and what was skipped, and performs better with large lists.
 
 ## How to install
 
 Clone or download this repo, open Chrome and go to chrome://extensions, enable Developer Mode, click Load unpacked, and select this folder.
 
-## What changed in v2
-
-The original version had some reliability issues when opening a large number of tabs. Version 2 is a clean rewrite with better performance and more consistent behavior across different Chrome versions.
-
 ## Built with
 
-Manifest V3 and plain JavaScript with CSS.
+Manifest V3, vanilla JavaScript and CSS, Chrome's tabs and windows APIs.
